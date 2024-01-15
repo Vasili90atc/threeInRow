@@ -9,7 +9,7 @@ public class Game {
 	public Game() {
 		sc = new Scanner(System.in);
 		System.out.println("Welcome to the three-in-a-row game!");
-		print_board();
+		printBoard();
 	}
 
 	public void gameOn() {
@@ -22,7 +22,7 @@ public class Game {
 			playerMakesMove(1);
 			moves_made++;
 			winner = checkForWinner();
-			print_board();
+			printBoard();
 			if (winner != 0 || moves_made == positions.length)
 				break;
 
@@ -30,7 +30,7 @@ public class Game {
 			playerMakesMove(2);
 			moves_made++;
 			winner = checkForWinner();
-			print_board();
+			printBoard();
 			if (winner != 0 || moves_made == positions.length)
 				break;
 		}
@@ -89,8 +89,8 @@ public class Game {
 		return move;
 	}
 
-	private void print_board() {
-		int elements_in_row = 0;
+	private void printBoard() {
+		int elementsInRow = 0;
 		for (int i = 0; i < positions.length; i++) {
 			if (positions[i] == 0)
 				System.out.print(i+1);
@@ -99,10 +99,10 @@ public class Game {
 			else if (positions[i] == 2)
 				System.out.print("X");
 
-			elements_in_row++;
-			if (elements_in_row == wrap) {
+			elementsInRow++;
+			if (elementsInRow == wrap) {
 				System.out.println();
-				elements_in_row = 0;
+				elementsInRow = 0;
 			} else {
 				System.out.print(" ");
 			}
